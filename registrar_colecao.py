@@ -10,8 +10,11 @@ class Colecao:
         del self.__colecoes[nome_colecao]
 
     def adicionar_item(self, nome_colecao, nome_item):
-        self.__colecoes[nome_colecao].append(nome_item)
-
+        try:
+            self.__colecoes[nome_colecao].append(nome_item)
+        except Exception as e:
+            print(f'Você teve um erro {e}')            
+            
     def remover_item(self, nome_colecao, nome_item):
         self.__colecoes[nome_colecao].remove(nome_item)
 
